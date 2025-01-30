@@ -15,7 +15,11 @@
 
         public void AddProduct(string name, double price)
         {
-            _products.Add(new Product(name, price));
+            if (_products.Count(x=>x.Name == name) == 0)
+            {
+                _products.Add(new Product(name, price));
+                
+            }
         }
 
         public void RemoveProduct(string name)
